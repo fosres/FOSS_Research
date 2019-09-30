@@ -1,2 +1,2 @@
-# DuckDuckHack-Scholar
+# DH-Scholar
 The official repository for creating a FLOSS-compliant version of G------ Scholar
