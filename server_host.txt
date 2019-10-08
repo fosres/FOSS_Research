@@ -1,3 +1,7 @@
 Use Heroku, not AWS.
 
 heroku.com, a service by salesforce.com
+
+When you generate enough income, switch to Red Hat Enterprise Linux
+
+Offers free server space. 
