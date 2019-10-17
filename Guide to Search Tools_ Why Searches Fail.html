@@ -1,0 +1,347 @@
+
+<!-- saved from url=(0052)http://www.searchtools.com/info/whysearchesfail.html -->
+<html><script data-dapp-detection="">
+(function() {
+  let alreadyInsertedMetaTag = false
+
+  function __insertDappDetected() {
+    if (!alreadyInsertedMetaTag) {
+      const meta = document.createElement('meta')
+      meta.name = 'dapp-detected'
+      document.head.appendChild(meta)
+      alreadyInsertedMetaTag = true
+    }
+  }
+
+  if (window.hasOwnProperty('web3')) {
+    // Note a closure can't be used for this var because some sites like
+    // www.wnyc.org do a second script execution via eval for some reason.
+    window.__disableDappDetectionInsertion = true
+    // Likely oldWeb3 is undefined and it has a property only because
+    // we defined it. Some sites like wnyc.org are evaling all scripts
+    // that exist again, so this is protection against multiple calls.
+    if (window.web3 === undefined) {
+      return
+    }
+    if (!window.web3.currentProvider ||
+        !window.web3.currentProvider.isMetaMask) {
+      __insertDappDetected()
+    }
+  } else {
+    var oldWeb3 = window.web3
+    Object.defineProperty(window, 'web3', {
+      configurable: true,
+      set: function (val) {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        oldWeb3 = val
+      },
+      get: function () {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        return oldWeb3
+      }
+    })
+  }
+})()</script><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		
+		
+<title>Guide to Search Tools: Why Searches Fail</title>
+		
+		
+<meta name="description" content="Analysis of why search engines fail to match words in searches, and what can be done about these issues.">
+		<meta name="Author" content="Avi Rappoport, Search Tools Consulting">
+		
+<meta name="keywords" content="site search, searchtools, search tools, local index, search engine, nomatches, no-matches, failure, empty result">
+	</head>
+
+	<body bgcolor="white">
+		<center><!-- #BeginLibraryItem "/Library/navtop.lbi" --><!-- searchtools - start of top navigation - 
+	all contents copyright Avi Rappoport / Search Tools Consulting, some rights reserved-->
+	
+
+<div name="tnav" id="navt" style="font-size:smaller">
+	<!-- no need to index navigation text -->
+	<noindex>
+		<!-- stopindex-->
+		<!-- no index -->
+		<!-- noindex -->
+		<hr>
+		<p>
+		<table border="0" width="86%" height="28" bgcolor="#ccccff" align="center">
+			<tbody><tr>
+				<td align="center"> <a href="http://www.searchtools.com/index.html"><b>Home</b></a></td>
+				<td align="center"> <a href="http://www.searchtools.com/guide/index.html"><b>Guide</b></a></td>
+				<td align="center"> <a href="http://www.searchtools.com/tools/tools.html"><b>Tools Listing</b></a></td>
+				<td align="center"> <a href="http://www.searchtools.com/news.html"><b>News</b></a> </td>
+				<td align="center"> <a href="http://www.searchtools.com/info/index.html"><b>Background</b></a></td>
+				<td align="center"> <a href="http://www.searchtools.com/search/index.html"><b>Search</b></a></td>
+				<td align="center"> <a href="http://www.searchtools.com/about/index.html"><b>About Us</b></a> </td>
+			</tr>
+		</tbody></table></p>
+		<!-- /noindex -->
+		<!-- /no index -->
+		<!-- startindex -->
+		<!-- no need to index navigation text -->
+	</noindex>
+
+</div>
+<!-- end of top navigation -->
+	<p align="center"><b>As of January, 2012, this site is no longer being updated, due to work and health issues</b></p><!-- #EndLibraryItem --><h3>Guide to Search Tools </h3>
+			
+  <h2>Why Searches Fail 
+    <hr>
+	</h2>
+	</center>
+		<h2><table border="0" cellpadding="4" cellspacing="2" frame="" width="100%">
+				<tbody><tr>
+					
+      <td valign="top"> 
+        <h4>&nbsp;</h4>
+						</td>
+					
+      <td valign="top"> 
+        <div align="left"> </div>
+        <blockquote> 
+          <p>No matter how carefully you design a search engine, there will always 
+            be some searches that fail. Our search log analysis shows that it's 
+            often a simple mistake or misunderstanding, so there's no one to blame. 
+            Some search engines are better than others at finding useful matches 
+            and providing <a href="http://www.searchtools.com/guide/nomatches.html">helpful pages</a> 
+            when nothing can be found.</p>
+        </blockquote>
+        <h3>Top Five Reasons Why Searches Find No Matches</h3>
+        <blockquote> 
+          <h4><b>1. Empty searches</b></h4>
+          <p>Amazing numbers of people just click the search button or press Return 
+            when the cursor is in the search field. So the search engine gets 
+            an empty query, which is usually treated as a search failure.</p>
+          <blockquote> 
+            <p> <b>What to do: </b> either chose a search engine which brings 
+              up a helpful search page when the search is empty, or make sure 
+              that you have wording on your <a href="http://www.searchtools.com/guide/nomatches.html">no-matches 
+              page</a> to explain what is going on. </p>
+          </blockquote>
+          <p><b>2. Wrong Scope (trying to search the whole Web)</b></p>
+          <p>Whether it's a site, Intranet or small portal, your search engine 
+            covers only the topics on your site, not the entire Web. For example, 
+            searching for <i>shot put</i> on a site about medieval art is just 
+            as useless as searching for <i>marginalia </i>on a sports portal! 
+            Despite this, people often see the search field or button, and think 
+            they're getting a webwide search engine. If you look in your search 
+            logs, you'll see the wide variety of searches which clearly are not 
+            directed correctly.</p>
+          <blockquote> 
+            <p> <b>What to do: </b>Several search engines provide versions with 
+              options to search the entire web, as well as the local site or portal. 
+              In any case, the <a href="http://www.searchtools.com/guide/nomatches.html">no-matches page</a> 
+              should explain the scope of the site and explain what materials 
+              the search index covers. </p>
+          </blockquote>
+          <p><b>3. Vocabulary Mismatch</b> </p>
+          <p>Searches containing terms which are too specific, too general or 
+            just not used. For example, on a medical site, someone searching for 
+            <i>doctor</i> may need to look for <i>physician;</i> a horse site 
+            may talk about <i>Paso Finos </i> instead of <i>walking horses; </i>and 
+            a beginning web design portal may not include any sites that get into 
+            details on <i>onblur</i> tags, though they may have some links to 
+            JavaScript pages. </p>
+          <blockquote> 
+            <h4><b>What to do</b></h4>
+            <p>Some search engines perform linguistic <b>stemming</b> -- they 
+              search for several forms of a word instead of just the exact match. 
+              For example, a search for <i>run</i> might also find <i>running, 
+              runs, ran,</i> or<i> runner;</i> a search for <i>goose</i> might 
+              also look for <i>geese</i>. This makes it more likely that a search 
+              will find a match, but must be implemented carefully so it doesn't 
+              display inappropriate matches at the top of the results list. Note 
+              that multilingual sites must be very careful in implementing the 
+              correct stemming algorithm for each page's languages, or they may 
+              return some very odd results. </p>
+            <p>Adding <b>metadata</b> to pages can help match search words, especially 
+              for broader and narrower terms. If you have pages describing <i>DSL 
+              </i>and <i>cable modems</i> but never use the word <i>broadband</i>, 
+              adding that term to the META Keywords tag content will allow the 
+              search engine to find those pages</p>
+            <p>Search engines may allow search administrators to set up <b>synonym 
+              lists</b> or <b>thesari</b> to provide appropriate alternate terms. 
+              For direct synonyms, such as <i>urticaria </i> as the technical 
+              term for <i>hives</i>,<b> </b>it's appropriate to simply add that 
+              to the query. For less obvious equivalents, such as <i>red</i> for 
+              <i>crimson</i>, and for broader and narrower terms, the search engine 
+              should display them and allow the searcher to click on them rather 
+              than typing them in. </p>
+          </blockquote>
+          <p><b>4. Spelling Mistakes</b></p>
+          <p>People make mistakes in spelling all the time. For simple typos, 
+            log file analysis shows that searchers will re-enter the word correctly. 
+            However, they often are unable to remember unfamiliar terms such as 
+            diseases, product codes, and names in general. </p>
+          <blockquote> 
+            <h4>What to do </h4>
+            <ul>
+              <li><b>Synonym lists</b> (described above) can help with common 
+                misspellings of important words on a site -- the engine can simply 
+                translate the bad spelling to the correct version and continue. 
+                <br>
+                <br>
+              </li>
+              <li>A <b>spellchecker</b> can provide a list of correctly-spelled 
+                words, allowing searchers to switch to the right spelling.</li>
+            </ul>
+            <h4>Complex Solutions</h4>
+            <p>Information Retrieval theorists have come up with some clever solutions 
+              to spelling errors, but they can be frustrating to users unless 
+              presented properly. Be careful when implementing a search with fuzzy 
+              matching: use usability testing and search logs to track whether 
+              the results are substantially better than exact matching.<br>
+            </p>
+            <ul>
+              <li><b>Fuzzy matching</b> techniques try to reduce words to their 
+                core and then match all forms of the word. For example, searching 
+                for <i>serach</i> would properly locate <i>search</i>, but a search 
+                for <i>locks</i> might find <i>looks</i>, whether or not that 
+                was wanted. <br>
+                <br>
+              </li>
+              <li><b>Phonetic</b>, sound-alike or "Soundex" matching 
+                uses linguistics to search for words which may sound similar. 
+                This is particularly useful for names, so a search for <i>licos</i> 
+                will find <i>Lycos</i>, but also brings up odd results: a search 
+                for <i>fuzzie</i> may match <i>fees</i> or <i>face.</i> </li>
+            </ul>
+          </blockquote>
+          <p><b>5. Query Requirements Not Met</b></p>
+          <p>If the search engine automatically searches for all terms or a phrase, 
+            or the query includes operators such as + or NOT, there may be no 
+            pages which fulfill all the requirements. Examples include <i>brown 
+            bear</i>(both terms), <i>"Olympic gold medal"</i> (phrase), 
+            <i>claymation +British</i> (required term), <i>MP3 NOT Napster</i> 
+            (excluded terms). </p>
+          <p>This can also happen when searching in a particular section or <b>zone</b> 
+            of a site for words which are used in different sections of the site. 
+            Yahoo and CNet are good examples where people can limit searches to 
+            a subsection, but searching for <i>roses</i> in the <i>tropical fish</i> 
+            area will never find a match.</p>
+          <blockquote> 
+            <p><b>What to do: </b>Search engines which show the number of pages 
+              matched for each term are particularly helpful in this case. The 
+              <a href="http://www.searchtools.com/guide/nomatches.html">no-matches page</a> can clarify 
+              which of the terms caused the problem and provide advice on how 
+              to enlarge the search.</p>
+          </blockquote>
+        </blockquote>
+        <h3>Other Causes of Search Failure</h3>
+        <ul>
+          <li><b>Problems with Query Syntax</b>: some search engines are very 
+            picky about how the query must be entered. If a searcher puts a space 
+            after an operator such as +, or uses <i>NOT</i> instead of <i>AND 
+            NOT</i>, the search may fail. 
+            <ul>
+              <li>The search engine should provide helpful error messages and 
+                instructions in this case, or better yet, be more accepting in 
+                its query parsing. For example, if a close parenthesis ")" 
+                is missing, the engine can simply add it at the end of the query, 
+                with an explanatory message in the results page.</li>
+            </ul>
+          </li>
+        </ul>
+        <blockquote> 
+          <h4></h4>
+        </blockquote>
+        <ul>
+          <li><b> Capitalization and Extended Characters</b>: some search engines 
+            require exact matches for capital letters and diacritical characters 
+            (such as ü, ß, ñ). In that case, searches for <i>pokeman</i> 
+            will never find pages with the word <i>Pokéman. </i> 
+            <ul>
+              <li>If your search engine is strict about these elements, make sure 
+                that explain the problem on the <a href="http://www.searchtools.com/guide/nomatches.html">no-matches 
+                page</a>. <br>
+                <br>
+              </li>
+            </ul>
+          </li>
+          <li><b>Stopwords</b>: to save index space and time, some search engine 
+            just don't include common words in their index. This can range from 
+            prepositions and conjunctions (such as <i>a, an, the, with, from</i>) 
+            to words which are extremely common within the index (<i>baseball 
+            </i>and <i>TV </i>on a sports site, for example). Unfortunately, people 
+            often search for these terms (think of <i>As You Like It</i>) and 
+            are confused when they can't find the pages which contain them. 
+            <ul>
+              <li>If your search engine must use stopwords, make sure the <a href="http://www.searchtools.com/guide/nomatches.html">no-matches 
+                page</a> explains what they are and how to search around them. 
+                <br>
+                <br>
+              </li>
+            </ul>
+          </li>
+          <li><b>Short Words:</b> some search engines have a lower-size limit 
+            for indexing words, so they don't have to store thousands of entries 
+            for the word <i>I</i> and other short words. However, if those are 
+            required parts of a search, omitting them from the index means that 
+            the search nay not find any matches (<i>to be or not to be, </i>for 
+            example). 
+            <ul>
+              <li>Whenever possible, index everything. If your search engine will 
+                not index short words, make sure the <a href="http://www.searchtools.com/guide/nomatches.html">no-matches 
+                page</a> explains how to search around them. <br>
+                <br>
+              </li>
+            </ul>
+          </li>
+          <li><b>Numbers: </b>some search engines don't index numbers, either 
+            because they are short or just because they are not words. But people 
+            search on them all the time! 
+            <ul>
+              <li>If your search engine will not index them, make sure the <a href="http://www.searchtools.com/guide/nomatches.html">no-matches 
+                page</a> explains that numbers can't be searched.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Avoiding Future Failure</h3>
+        <blockquote> 
+          <p>Be sure to track your search logs so you can see why and how your 
+            customers are having problems with search. Watch those searches that 
+            find 0 matches like a hawk, and do your best to add new synonyms, 
+            terms and information that addresses these questions.</p>
+          <hr>
+        </blockquote>
+    </td></tr></tbody></table></h2>
+			
+<!-- #BeginLibraryItem "/Library/navb00.lbi" -->
+<hr>
+<!-- noindex -->
+<!-- no index -->
+<!-- stopindex-->
+<noindex>
+	<!-- no need to index navigation text -->
+	<table width="86%" height="28" border="0" align="center" bgcolor="#ccccff">
+		<tbody><tr>
+			<td align="center" bordercolor="ccccff"><a href="http://www.searchtools.com/index.html"><b>Home</b></a></td>
+			<td align="center"><a href="http://www.searchtools.com/guide/index.html"><b>Guide</b></a></td>
+			<td align="center"><a href="http://www.searchtools.com/tools/tools.html"><b> Tools Listing</b></a></td>
+			<td align="center"><a href="http://www.searchtools.com/news.html"><b>News</b></a></td>
+			<td align="center"><a href="http://www.searchtools.com/info/index.html"><b>Info</b></a></td>
+			<td align="center"><a href="http://www.searchtools.com/search/index.html"><b>Search</b></a></td>
+			<td align="center"><a href="http://www.searchtools.com/about/index.html"><b>Contact</b></a></td>
+		</tr>
+	</tbody></table>
+	<p style="font-size:small; margin-left:8em; margin-right:8em"> Avi Rappoport of Search Tools Consulting can help  you evaluate your search engine, whether it's on a site, portal, intranet, or Enerprise. 
+		Please <a href="http://www.searchtools.com/about/consulting-contact.html">contact SearchTools</a> for more information.</p>
+	<hr style="margin-left:2em; margin-right:2em;">
+	<p style="font-size:small; margin-left:8em; margin-right:8em;"> <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"> <img src="./Guide to Search Tools_ Why Searches Fail_files/somerights20.png" alt="Creative Commons License" border="2" align="left" style="border-width:4"></a> &nbsp;This information copyright  © 2000-2011 <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.searchtools.com/about/index.html" property="cc:attributionName" rel="cc:attributionURL">Avi Rappoport, Search Tools Consulting</a>. Some Rights Reserved, under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 United States License</a>. 
+		Always attribute copied content to the page's full URL. Permissions beyond the scope of this license
+		are available upon request.</p>
+	<!-- /noindex -->
+	<!-- /no index -->
+</noindex>
+<!-- no need to index navigation text -->
+<!-- #EndLibraryItem --><p>
+</p><center>
+</center>
+	
+
+
+</body></html>
