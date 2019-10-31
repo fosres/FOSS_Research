@@ -1,0 +1,11 @@
+3 Rules to keep the project from falling appart
+
+by Joe Martinez
+
+1. Don't ask for instant timelines/deadlines
+
+2. Don't make people gear their learning path so strictly towards the main project
+	
+	Permit Joseph to learn MySQL database management using the blog.
+
+3. Instead of deadlines ask for deliverables
