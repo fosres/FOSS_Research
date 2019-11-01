@@ -1,0 +1,25 @@
+1. Discuss if Samer should stay in committee
+
+Samer will not include himself in the project "'till later".
+
+Joseph will try to give Samer an introduction to Python.
+
+2. Talk with Nick on what method he wishes to learn Python.
+
+Try to understand up to lists in Python by next week. 
+
+3. Inform everyne on progress with Joseph and his weblog to master the SQL Database
+
+4. Inform of James Wagner's assignment to learn Inverting Files and Indexing Databases. Check
+
+5. Inform everyone of your progress on the compression algorithm.
+
+6. Ask Joseph, James, and Samer about reviewing the blog.
+
+Do not assume everyone knows cybersecurity by default. - Nick
+
+Adib - Get help from the mentors during UTD Hackathon
+
+Nick -  Figure out a method to get past the 100 GB cost of servers?
+
+I need to visit TTU Innovation Hub for that.
